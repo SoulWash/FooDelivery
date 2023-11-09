@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: rgba(244,236,225,1);
+    --orange:#FF7E00;
+    --black: #2F2F2F;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #FF9F9F;
+}
+
+#app {
+    max-width: 151.1rem;
+    height: 86.6rem;
+    margin: auto;
+    background-color:var(--background-color);
+    padding: 4.8rem 8.7rem;
+
+    display: grid;
+    grid-template-areas: "header header" "main section";
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+section {
+    grid-area: section;
+}
+
+header #logo {
+    display: flex;
+    gap:2px;
+
+}
+
+#logo h1 {
+    margin-top: 20%;
+}
+
+header nav {
+    display: flex;
+    gap: 10rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: regular;
+    font-size: 2rem;
+    color: var(--black);
+    transition: all .1s ease-in;
+}
+nav a:hover {
+    color: var(--orange);
+}
+
+#search {
+    position: relative;
+}
+
+#search i {
+    position: absolute;
+    top: 2rem;
+    font-size:18px;
+}
+#search i.ph-magnifying-glass {
+    left: 3rem;
+}
+
+#search i.ph-shopping-cart {
+    border-left: 1px solid gray;
+    padding-left: 2rem;
+    right: 4rem;
+}
+
+#search input {
+    background-color: transparent;
+    box-shadow: 1px 2px 1px 1px rgb(199, 199, 199);
+    width: 31.4rem;
+    height: 6rem;
+    font-weight: regular;
+    font-size: 2rem;
+    padding-left: 6rem;
+    border-radius: 3rem;
+    border:none;
+}
+
+
+section img {
+    width: 60rem;
+}
