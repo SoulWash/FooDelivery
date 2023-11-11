@@ -1,3 +1,5 @@
+@import url(animation.css);
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +8,7 @@
 
 :root {
     --background-color: rgba(244,236,225,1);
+    --yellow: rgb(235, 228, 137);
     --orange:#FF7E00;
     --black: #2F2F2F;
     --gray: #909090;
@@ -14,7 +17,7 @@
 }
 
 body {
-    background-color: rgb(235, 228, 137);
+    background-color: var(--yellow);
 }
 
 #app {
@@ -26,6 +29,8 @@ body {
 
     display: grid;
     grid-template-areas: "header header" "main section";
+
+    border-radius: 2rem;
     
 }
 
@@ -47,7 +52,7 @@ section {
     grid-area: section;
 }
 
-header #logo {
+#logo {
     display: flex;
     gap:2px;
 
@@ -70,6 +75,8 @@ nav a {
     font-size: 2.3rem;
     color: var(--black);
     transition: all .1s ease-in;
+
+    text-shadow: 1px 1px 1px rgba(43, 41, 41, 0.5);
 }
 nav a:hover {
     color: var(--orange);
@@ -89,7 +96,7 @@ nav a:hover {
 }
 
 #search i.ph-shopping-cart {
-    border-left: 1px solid gray;
+    border-left: 1px solid var(--gray);
     padding-left: 2rem;
     right: 4rem;
 }
@@ -104,6 +111,12 @@ nav a:hover {
     padding-left: 6rem;
     border-radius: 3rem;
     border:none;
+}
+
+#search input:focus, #search input:placeholder-shown{
+    outline: 1px solid var(--yellow);
+
+    color: var(--orange);
 }
 
 
@@ -145,7 +158,79 @@ nav a:hover {
     text-align: left;
 }
 
+.buttons {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 2.8rem;
+}
+
+button, span {
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+
+#order {
+    background-color: var(--black);
+    color: #fff;
+    padding: 2.5rem 4.1rem;
+    border-radius: 25rem;
+
+}
+
+#play {
+    padding: 2rem;
+    border: none;
+    border-radius: 50%;
+    background-color: #FFF8F0;
+    margin-right: 0.6rem;
+}
+
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#rating {
+    margin-top: 6rem;
+    font-size: 1.8rem;
+
+    text-align: left;
+}
+
+#rating p:nth-child(2) {
+    font-weight: 600;
+}
+
+#rating p:nth-child(3) {
+    color: var(--gray);
+    font-weight: 300;
+}
 
 section img {
     width: 70rem;
 }
+
+@media screen and (max-width: 1500px) {
+    #app {
+      grid-template-areas: "header header" "section section" "main main";
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    #logo {
+        margin: 0;
+    }
+    
+    header {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5rem;
+    }
+  }
+  

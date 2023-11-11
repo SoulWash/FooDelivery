@@ -1,0 +1,9 @@
+#logo {
+    animation: blink 1.5s infinite backwards linear alternate;
+}
+
+@keyframes blink {
+    0% {
+        transform: scale(0.5);
+    }
+}
